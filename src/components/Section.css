@@ -1,0 +1,122 @@
+/**
+ * Section Component Styles
+ * 
+ * Provides consistent section spacing, layout, and styling
+ * with support for multiple variants (default, alternate, hero)
+ */
+
+/* ========================================
+   BASE SECTION STYLES
+   ======================================== */
+
+.section {
+  width: 100%;
+  padding: var(--section-padding-mobile) var(--space-4);
+}
+
+/* Desktop spacing */
+@media (min-width: 1024px) {
+  .section {
+    padding: var(--section-padding-desktop) var(--space-4);
+  }
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========================================
+   SECTION CONTENT AREAS
+   ======================================== */
+
+.section__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-4) 0;
+  text-align: center;
+  line-height: var(--line-height-tight);
+}
+
+.section__subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-8) 0;
+  text-align: center;
+  line-height: var(--line-height-normal);
+}
+
+.section__content {
+  width: 100%;
+}
+
+/* Desktop typography */
+@media (min-width: 1024px) {
+  .section__title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .section__subtitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-10);
+  }
+}
+
+/* ========================================
+   SECTION VARIANTS
+   ======================================== */
+
+/* Default variant - white background */
+.section--default {
+  background-color: var(--color-surface);
+}
+
+/* Alternate variant - off-white background for visual separation */
+.section--alternate {
+  background-color: var(--color-background);
+}
+
+/* Hero variant - larger spacing and primary color accent */
+.section--hero {
+  background-color: var(--color-surface);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+@media (min-width: 1024px) {
+  .section--hero {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+
+/* Hero variant title styling */
+.section--hero .section__title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .section--hero .section__title {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+/* Hero variant subtitle styling */
+.section--hero .section__subtitle {
+  font-size: var(--font-size-xl);
+}
+
+@media (min-width: 1024px) {
+  .section--hero .section__subtitle {
+    font-size: var(--font-size-2xl);
+  }
+}

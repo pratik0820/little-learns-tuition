@@ -1,0 +1,173 @@
+/**
+ * CourseCard Component Styles
+ * 
+ * Styles for the course card component displaying class information,
+ * subjects, curriculum, and class details.
+ */
+
+/* ========================================
+   TITLE SECTION
+   ======================================== */
+
+.course-card__title-section {
+  text-align: center;
+}
+
+.course-card__title {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: var(--line-height-tight);
+}
+
+.course-card__age-range {
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   CONTENT SECTIONS
+   ======================================== */
+
+.course-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Section spacing handled by parent gap */
+
+.course-card__section-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+/* ========================================
+   LISTS
+   ======================================== */
+
+.course-card__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-card__list-item {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+.course-card__list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Bullet styling with checkmark icon */
+.course-card__list-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+/* Subjects list - use different bullet */
+.course-card__list--subjects .course-card__list-item::before {
+  content: '•';
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-tight);
+}
+
+/* ========================================
+   DETAILS FOOTER
+   ======================================== */
+
+.course-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.course-card__detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.course-card__detail-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.course-card__detail-value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .course-card__title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .course-card__age-range {
+    font-size: var(--font-size-base);
+  }
+  
+  .course-card__section-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .course-card__list-item {
+    font-size: var(--font-size-lg);
+  }
+  
+  .course-card__details {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+  }
+  
+  .course-card__detail-item {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+  .course-card__title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .course-card__content {
+    gap: var(--space-8);
+  }
+  
+  .course-card__section-title {
+    margin-bottom: var(--space-4);
+  }
+  
+  .course-card__list-item {
+    margin-bottom: var(--space-3);
+  }
+}

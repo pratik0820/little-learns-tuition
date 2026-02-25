@@ -1,0 +1,264 @@
+/**
+ * Footer Component Styles
+ * 
+ * Implements a global footer with:
+ * - Quick links navigation
+ * - Contact information display
+ * - Social media links
+ * - Multi-column layout on desktop
+ * - Stacked layout on mobile
+ * - Consistent design system colors
+ */
+
+/* ========================================
+   FOOTER CONTAINER
+   ======================================== */
+
+.footer {
+  background-color: var(--color-text);
+  color: var(--color-surface);
+  padding-top: var(--section-padding-mobile);
+  padding-bottom: var(--space-4);
+  margin-top: auto; /* Push footer to bottom if using flexbox layout */
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-top: var(--section-padding-desktop);
+  }
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .footer__container {
+    padding: 0 var(--space-6);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__container {
+    gap: var(--space-12);
+  }
+}
+
+/* ========================================
+   FOOTER SECTIONS
+   ======================================== */
+
+.footer__section {
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__section {
+    margin-bottom: 0;
+  }
+}
+
+.footer__heading {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-surface);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--line-height-tight);
+}
+
+/* ========================================
+   QUICK LINKS SECTION
+   ======================================== */
+
+.footer__links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__links-item {
+  margin: 0;
+}
+
+.footer__link {
+  display: inline-block;
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  transition: color 0.2s ease;
+  padding: var(--space-1) 0;
+}
+
+.footer__link:hover {
+  color: var(--color-primary-light);
+}
+
+.footer__link:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   CONTACT INFORMATION SECTION
+   ======================================== */
+
+.footer__contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.footer__contact-icon {
+  flex-shrink: 0;
+  color: var(--color-primary-light);
+  margin-top: var(--space-1);
+}
+
+.footer__contact-link {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  transition: color 0.2s ease;
+}
+
+.footer__contact-link:hover {
+  color: var(--color-primary-light);
+}
+
+.footer__contact-link:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.footer__address {
+  color: var(--color-text-light);
+  font-style: normal;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* ========================================
+   SOCIAL MEDIA SECTION
+   ======================================== */
+
+.footer__social-links {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-text-light);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer__social-link:hover {
+  color: var(--color-surface);
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.footer__social-link:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   COPYRIGHT SECTION
+   ======================================== */
+
+.footer__bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .footer__bottom {
+    margin-top: var(--space-12);
+  }
+}
+
+.footer__copyright {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Ensure keyboard focus is visible */
+.footer__link:focus,
+.footer__contact-link:focus,
+.footer__social-link:focus {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+.footer__link:focus:not(:focus-visible),
+.footer__contact-link:focus:not(:focus-visible),
+.footer__social-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Mobile: Stacked layout (default) */
+/* All sections stack vertically with full width */
+
+/* Tablet: 3-column grid layout */
+@media (min-width: 768px) {
+  .footer__section--links {
+    grid-column: 1;
+  }
+  
+  .footer__section--contact {
+    grid-column: 2;
+  }
+  
+  .footer__section--social {
+    grid-column: 3;
+  }
+}
+
+/* Desktop: Maintain 3-column grid with increased spacing */
+@media (min-width: 1024px) {
+  .footer__heading {
+    font-size: var(--font-size-xl);
+  }
+}

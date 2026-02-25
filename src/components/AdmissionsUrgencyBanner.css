@@ -1,0 +1,182 @@
+/**
+ * AdmissionsUrgencyBanner Component Styles
+ * 
+ * Prominent banner with contrasting colors to draw attention
+ * to admissions urgency message. Positioned prominently on the page.
+ */
+
+/* .admissions-banner {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+  color: var(--color-text);
+  padding: var(--space-4) 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+} */
+
+.admissions-banner {
+  position: relative;
+  overflow: hidden;
+
+  /* soft notebook/table color */
+  background: #f9e8b5;
+
+  /* smooth integration */
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 1px dashed rgba(210, 160, 70, 0.5);
+
+  padding: 14px 0;
+  box-shadow: inset 0 8px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Add animated pulse effect for urgency */
+/* .admissions-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 3s infinite;
+} */
+
+.admissions-banner::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    #f9e8b5
+  );
+}
+
+/* @keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+} */
+
+.admissions-banner::after {
+  display: none;
+}
+
+/* .admissions-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  text-align: center;
+} */
+
+.admissions-banner__content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-align: center;
+}
+
+/* .admissions-banner__icon {
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+  animation: pulse 2s ease-in-out infinite;
+} */
+
+.admissions-banner__icon {
+  font-size: 20px;
+  line-height: 1;
+  animation: none;
+}
+
+
+/* @keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+} */
+
+/* .admissions-banner__message {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+} */
+
+.admissions-banner__message {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0b2d5c;
+  letter-spacing: 0.2px;
+}
+
+/* ========================================
+   TABLET STYLES (768px and above)
+   ======================================== */
+
+/* @media (min-width: 768px) {
+  .admissions-banner {
+    padding: var(--space-5) 0;
+  }
+
+  .admissions-banner__message {
+    font-size: var(--font-size-lg);
+  }
+
+  .admissions-banner__icon {
+    font-size: var(--font-size-3xl);
+  }
+} */
+
+@media (min-width: 768px) {
+  .admissions-banner {
+    padding: 16px 0;
+  }
+
+  .admissions-banner__message {
+    font-size: 1.35rem;
+  }
+}
+
+/* ========================================
+   DESKTOP STYLES (1024px and above)
+   ======================================== */
+
+/* @media (min-width: 1024px) {
+  .admissions-banner {
+    padding: var(--space-6) 0;
+  }
+
+  .admissions-banner__message {
+    font-size: var(--font-size-xl);
+  }
+} */
+
+@media (min-width: 1024px) {
+  .admissions-banner {
+    padding: 18px 0;
+  }
+
+  .admissions-banner__message {
+    font-size: 1.45rem;
+  }
+}

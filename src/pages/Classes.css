@@ -1,0 +1,183 @@
+/* Classes Page Styles */
+
+.classes-page {
+  min-height: 100vh;
+}
+
+/* Intro Section */
+.classes-intro {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Courses Grid */
+.courses-section {
+  padding: var(--space-16) 0;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-10);
+  }
+}
+
+/* Features Section */
+.class-features-section {
+  padding: var(--space-16) 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 1200px;
+  margin: var(--space-8) auto 0;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-item {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+}
+
+.feature-item h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.feature-item p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+}
+
+/* Enrollment CTA Section */
+.enrollment-cta-section {
+  padding: var(--space-16) 0;
+  text-align: center;
+}
+
+.enrollment-text {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: var(--space-6) auto var(--space-8);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .cta-buttons {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .classes-intro {
+    font-size: var(--font-size-base);
+  }
+
+  .courses-section,
+  .class-features-section,
+  .enrollment-cta-section {
+    padding: var(--space-10) 0;
+  }
+
+  .enrollment-text {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Desktop styles (1024px and above) */
+@media (min-width: 1024px) {
+  .classes-intro {
+    font-size: var(--font-size-xl);
+    max-width: 900px;
+  }
+  
+  .courses-section {
+    padding: var(--space-20) 0;
+  }
+  
+  .courses-grid {
+    gap: var(--space-12);
+  }
+  
+  .class-features-section {
+    padding: var(--space-20) 0;
+  }
+  
+  .features-grid {
+    gap: var(--space-10);
+  }
+  
+  .feature-item {
+    padding: var(--space-8);
+  }
+  
+  .feature-icon {
+    font-size: 3.5rem;
+  }
+  
+  .feature-item h3 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .feature-item p {
+    font-size: var(--font-size-lg);
+  }
+  
+  .enrollment-cta-section {
+    padding: var(--space-20) 0;
+  }
+  
+  .enrollment-text {
+    font-size: var(--font-size-xl);
+    max-width: 800px;
+  }
+  
+  .cta-buttons {
+    gap: var(--space-8);
+  }
+}

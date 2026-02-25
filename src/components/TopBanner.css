@@ -1,0 +1,32 @@
+/**
+ * TopBanner Component Styles
+ * 
+ * A blue banner section that sits above the header
+ */
+
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  z-index: 1001; /* Above header */
+  height: 8px;
+}
+
+@media (min-width: 768px) {
+  .top-banner {
+    height: 13px;
+  }
+}
+
+.top-banner__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

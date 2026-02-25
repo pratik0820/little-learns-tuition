@@ -1,0 +1,54 @@
+/**
+ * Home Page Styles
+ * 
+ * Minimal styles for the home page layout.
+ * Most styling comes from individual components.
+ */
+
+.home {
+  /* Main content area */
+  min-height: 100vh;
+}
+
+/* Ensure smooth flow between sections */
+.home > * {
+  /* Sections handle their own spacing */
+}
+
+/* Desktop styles (1024px and above) */
+@media (min-width: 1024px) {
+  .home {
+    /* Additional spacing for desktop */
+  }
+  
+  /* Increase spacing between major sections on desktop */
+  .home > section + section {
+    margin-top: var(--space-8);
+  }
+}
+
+.home__testimonials {
+  padding: var(--space-12) 0;
+  background: #fff9e6;
+}
+
+.home__section-title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.home__section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+}

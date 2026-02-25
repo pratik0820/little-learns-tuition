@@ -1,0 +1,109 @@
+/**
+ * TestimonialsPreview Component Styles
+ * 
+ * Implements responsive grid layout for testimonial cards preview
+ * with mobile-first approach.
+ */
+
+/* ========================================
+   TESTIMONIALS PREVIEW CONTAINER
+   ======================================== */
+
+.testimonials-preview {
+  width: 100%;
+}
+
+/* ========================================
+   TESTIMONIALS GRID
+   ======================================== */
+
+.testimonials-preview__grid {
+  display: grid;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+  
+  /* Mobile: Single column */
+  grid-template-columns: 1fr;
+}
+
+/* ========================================
+   TESTIMONIAL CONTENT
+   ======================================== */
+
+.testimonials-preview__feedback {
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+.testimonials-preview__author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.testimonials-preview__name {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+}
+
+.testimonials-preview__info {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+/* ========================================
+   CTA SECTION
+   ======================================== */
+
+.testimonials-preview__cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .testimonials-preview__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    margin-bottom: var(--space-10);
+  }
+  
+  /* If there are 3 items, make the last one span both columns */
+  .testimonials-preview__grid > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .testimonials-preview__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-10);
+    margin-bottom: var(--space-12);
+  }
+  
+  /* Reset the span for 3-column layout */
+  .testimonials-preview__grid > :nth-child(3):last-child {
+    grid-column: auto;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* Large desktop: Increase spacing */
+@media (min-width: 1280px) {
+  .testimonials-preview__grid {
+    gap: var(--space-12);
+  }
+}

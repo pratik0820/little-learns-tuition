@@ -1,0 +1,100 @@
+.programs-section {
+  padding: var(--space-12) 0;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.programs-section__title {
+  text-align: center;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-8);
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.programs-section__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.programs-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.programs-section__card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.programs-section__card:hover {
+  transform: translateY(-5px);
+}
+
+.programs-section__header {
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.programs-section__card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.programs-section__content {
+  padding: var(--space-6);
+}
+
+.programs-section__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+}
+
+.programs-section__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.programs-section__check {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: var(--font-size-lg);
+}
+
+.programs-section__link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.programs-section__link:hover {
+  color: var(--color-primary-dark);
+}
+
+@media (min-width: 768px) {
+  .programs-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

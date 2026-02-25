@@ -1,0 +1,223 @@
+/**
+ * Button Component Styles
+ * 
+ * Implements button variants (primary, secondary, whatsapp, outline)
+ * and sizes (small, medium, large) with accessibility features.
+ */
+
+/* ========================================
+   BASE BUTTON STYLES
+   ======================================== */
+
+.btn {
+  /* Reset default button styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  
+  /* Typography */
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  text-decoration: none;
+  line-height: var(--line-height-tight);
+  
+  /* Layout */
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  
+  /* Transitions */
+  transition: all 200ms ease-in-out;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Ensure button is accessible */
+  position: relative;
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   BUTTON SIZES
+   All sizes meet minimum 44px touch target
+   ======================================== */
+
+.btn--small {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn--medium {
+  min-height: 44px;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+}
+
+.btn--large {
+  min-height: 48px;
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+/* ========================================
+   PRIMARY VARIANT (Soft Blue)
+   ======================================== */
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-primary-dark);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   SECONDARY VARIANT (Warm Yellow)
+   ======================================== */
+
+.btn--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border-color: var(--color-secondary);
+}
+
+.btn--secondary:hover:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary:active:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   WHATSAPP VARIANT (Soft Green)
+   ======================================== */
+
+.btn--whatsapp {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.btn--whatsapp:hover:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--whatsapp:active:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-accent-dark);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   OUTLINE VARIANT (Transparent with border)
+   ======================================== */
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--outline:hover:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--outline:active:not(:disabled):not(.btn--disabled) {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-surface);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   DISABLED STATE
+   ======================================== */
+
+.btn:disabled,
+.btn--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn:disabled:hover,
+.btn--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========================================
+   BUTTON TEXT WRAPPER
+   ======================================== */
+
+.btn__text {
+  display: inline-block;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .btn--small {
+    padding: var(--space-2) var(--space-5);
+  }
+  
+  .btn--medium {
+    padding: var(--space-3) var(--space-8);
+  }
+  
+  .btn--large {
+    padding: var(--space-4) var(--space-10);
+  }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+  .btn--large {
+    min-height: 52px;
+    font-size: var(--font-size-xl);
+  }
+}

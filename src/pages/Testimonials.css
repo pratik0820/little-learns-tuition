@@ -1,0 +1,109 @@
+/* Testimonials Page Styles */
+
+.testimonials-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.testimonials-intro {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Testimonials Grid Section */
+.testimonials-grid-section {
+  padding: var(--space-16) 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-10);
+  }
+}
+
+/* CTA Section */
+.testimonials-cta-section {
+  text-align: center;
+}
+
+.testimonials-cta-text {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto var(--space-8);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .cta-buttons {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+}
+
+/* Ensure buttons are full width on mobile */
+.cta-buttons .btn {
+  width: 100%;
+  max-width: 300px;
+}
+
+@media (min-width: 768px) {
+  .cta-buttons .btn {
+    width: auto;
+  }
+}
+
+/* Desktop styles (1024px and above) */
+@media (min-width: 1024px) {
+  .testimonials-intro {
+    font-size: var(--font-size-xl);
+    max-width: 900px;
+  }
+  
+  .testimonials-grid-section {
+    padding: var(--space-20) 0;
+  }
+  
+  .testimonials-grid {
+    gap: var(--space-12);
+  }
+  
+  .testimonials-cta-text {
+    font-size: var(--font-size-xl);
+    max-width: 800px;
+  }
+  
+  .cta-buttons {
+    gap: var(--space-8);
+  }
+}

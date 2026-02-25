@@ -1,0 +1,218 @@
+/**
+ * FAQ Component Styles
+ * 
+ * Implements accordion-style FAQ section with smooth expand/collapse animations.
+ * Mobile-first responsive design with proper spacing and typography.
+ */
+
+/* ========================================
+   FAQ CONTAINER
+   ======================================== */
+
+.faq {
+  width: 100%;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ========================================
+   FAQ ITEM
+   ======================================== */
+
+.faq-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item--expanded {
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   FAQ QUESTION (BUTTON)
+   ======================================== */
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.faq-item__question:hover {
+  background-color: var(--color-background);
+}
+
+.faq-item__question:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.faq-item__question:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.faq-item__question:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* ========================================
+   QUESTION TEXT
+   ======================================== */
+
+.faq-item__question-text {
+  flex: 1;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   EXPAND/COLLAPSE ICON
+   ======================================== */
+
+.faq-item__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  border-radius: var(--radius-full);
+  transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.faq-item--expanded .faq-item__icon {
+  transform: rotate(180deg);
+}
+
+.faq-item__question:hover .faq-item__icon {
+  background-color: var(--color-primary-light);
+  color: var(--color-surface);
+}
+
+/* ========================================
+   ANSWER WRAPPER (ANIMATED)
+   ======================================== */
+
+.faq-item__answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-item--expanded .faq-item__answer-wrapper {
+  max-height: 500px; /* Large enough for most answers */
+  transition: max-height 0.4s ease-in;
+}
+
+/* ========================================
+   ANSWER CONTENT
+   ======================================== */
+
+.faq-item__answer {
+  padding: 0 var(--space-5) var(--space-5);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .faq__list {
+    gap: var(--space-5);
+  }
+
+  .faq-item__question {
+    padding: var(--space-6);
+  }
+
+  .faq-item__question-text {
+    font-size: var(--font-size-xl);
+  }
+
+  .faq-item__answer {
+    padding: 0 var(--space-6) var(--space-6);
+    font-size: var(--font-size-lg);
+  }
+
+  .faq-item__icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .faq__list {
+    gap: var(--space-6);
+  }
+
+  .faq-item__question {
+    padding: var(--space-8);
+  }
+
+  .faq-item__answer {
+    padding: 0 var(--space-8) var(--space-8);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__answer-wrapper {
+    transition: none;
+  }
+
+  .faq-item__icon {
+    transition: none;
+  }
+
+  .faq-item {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .faq-item {
+    border-width: 2px;
+  }
+
+  .faq-item__question:focus-visible {
+    outline-width: 3px;
+  }
+}

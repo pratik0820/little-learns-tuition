@@ -1,0 +1,149 @@
+/**
+ * TestimonialCard Component Styles
+ * 
+ * Implements testimonial card layout with parent feedback,
+ * student information, and optional improvement story.
+ */
+
+/* ========================================
+   BASE TESTIMONIAL CARD STYLES
+   ======================================== */
+
+.testimonial-card {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  
+  /* Visual */
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-accent);
+  box-shadow: var(--shadow-md);
+  
+  /* Spacing */
+  padding: var(--space-6);
+  
+  /* Transitions */
+  transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+  
+  /* Ensure proper stacking */
+  position: relative;
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   CARD BODY (Feedback)
+   ======================================== */
+
+.testimonial-card__body {
+  flex: 1;
+  margin-bottom: var(--space-5);
+}
+
+.testimonial-card__feedback {
+  font-style: italic;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ========================================
+   CARD FOOTER (Author & Improvement)
+   ======================================== */
+
+.testimonial-card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.testimonial-card__author {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.testimonial-card__parent-name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.testimonial-card__student-info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* ========================================
+   IMPROVEMENT STORY
+   ======================================== */
+
+.testimonial-card__improvement {
+  padding: var(--space-4);
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-secondary);
+}
+
+.testimonial-card__improvement-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.testimonial-card__improvement-text::before {
+  content: "✨ ";
+  color: var(--color-secondary);
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Mobile (base styles above) */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+  .testimonial-card {
+    padding: var(--space-8);
+  }
+  
+  .testimonial-card__body {
+    margin-bottom: var(--space-6);
+  }
+  
+  .testimonial-card__feedback {
+    font-size: var(--font-size-lg);
+  }
+  
+  .testimonial-card__footer {
+    gap: var(--space-5);
+  }
+  
+  .testimonial-card__author {
+    padding-top: var(--space-5);
+  }
+  
+  .testimonial-card__improvement {
+    padding: var(--space-5);
+  }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+  .testimonial-card {
+    padding: var(--space-10);
+  }
+  
+  .testimonial-card__feedback {
+    font-size: var(--font-size-xl);
+  }
+}
